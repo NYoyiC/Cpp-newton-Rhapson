@@ -34,8 +34,8 @@ double fp(double T) {
 
 int main() {
     int n = 0;
-    int maxiteraciones = 100;
-    double T0 = 1; // Empieza con un valor más alto para evitar NaN
+    int maxiteraciones = 1000;
+    double T0 = 5000; // Empieza con un valor más alto para evitar NaN
     double T1;
     
     while (n < maxiteraciones) {
@@ -43,7 +43,7 @@ int main() {
         double fpT0 = fp(T0);
         
         if (isnan(fT0) || isnan(fpT0)) {
-            cout << "Se produjo un valor NaN en la iteración " << n << ". Verifica los cálculos." << endl;
+            cout << "Se produjo un valor NaN en la iteracion " << n << ". Verifica los calculos." << endl;
             break;
         }
         
@@ -56,16 +56,16 @@ int main() {
         
         // Evitar valores negativos
         if (T1 < 0) {
-            cout << "Se alcanzó un valor negativo en la iteración " << n << ". T = " << T1 << endl;
+            cout << "Se alcanzo un valor negativo en la iteracion " << n << ". T = " << T1 << endl;
             break;
         }
         
         T0 = T1;
-        cout << "Iteracion " << n << ": T = " << setprecision(10) << T1 << endl;
+        cout << "Iteracion " << n << ": T = " << T1 << endl;
         n++;
     }
 
-    cout << "Temperatura encontrada: " << setprecision(10) << T1 << endl;
+    cout << "Temperatura encontrada: " << T1 << endl;
 
     return 0;
 }
